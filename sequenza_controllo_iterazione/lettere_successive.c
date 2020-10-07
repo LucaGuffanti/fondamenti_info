@@ -11,7 +11,7 @@ int main(){
 		next_l = l + N;
 
 		/*
-		  Gestisco "l'overflow dei char, sottraendo l'ultimo elemento dell'intervallo e sommando
+		  Gestisco "l'overflow" dei char, sottraendo l'ultimo elemento dell'intervallo e sommando
 		  quello che precede il primo, quindi l - 'z' + 'a' - 1;
 		*/
 		if(next_l > 'z'){
