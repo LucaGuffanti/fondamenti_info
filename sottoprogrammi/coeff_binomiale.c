@@ -5,13 +5,16 @@
 /*definiamo il sottoprogramma che calcola il fattoriale generico di un numero*/
 int fattoriale(int num);
 
+int acquisisci();
+
 
 int main(){
 
 	int n, k;
 	int f_n, f_k, f_nk, coeff;
 
-	scanf("%d%d", &n, &k);
+	n = acquisisci();
+	k = acquisisci();
 
 	/*
 	  Qui dovremmo quindi scrivere 3 volte lo stesso algoritmo, ma noi usiamo
@@ -38,6 +41,20 @@ int main(){
 }
 
 /*definiamo quindi la funzione*/
+
+int acquisisci(){
+
+	int num;
+
+	scanf("%d", &num);
+
+	while(num < 0){
+		printf("Numero non negativo\n");
+		scanf("%d", &num);
+	}
+
+	return num;
+}
 
 int fattoriale(int num){ /*num è il parametro formale*/
 
