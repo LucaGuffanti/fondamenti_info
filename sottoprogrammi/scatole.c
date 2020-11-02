@@ -57,7 +57,7 @@ int carica_container(t_scatola sc[], int dim, float peso){
 
 	for(i = 0, caricabile = 1, conta = 0; i < dim && caricabile; i++){
 
-		for(j = 0, caricabile = 1, somma_oggetti = 0; j < sc[i].n_oggetti; j++){
+		for(j = 0, caricabile = 1, somma_oggetti = 0; j < sc[i].n_oggetti && caricabile; j++){
 			somma_oggetti = somma_oggetti + (sc[i].oggetti[j].quanti * sc[i].oggetti[j].peso_per_unita);
 		}
 

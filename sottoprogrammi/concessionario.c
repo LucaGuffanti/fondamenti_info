@@ -1,21 +1,21 @@
 #include <stdio.h>
 
-#define DIM_NAME 30
+#define DIMSTR 30
 #define DIM_TARGA 7
 #define MAX_AUTO 50
 #define N_CONC 10
 
 typedef struct{
 
-	char nome[DIM_NAME + 1];
-	char cogn[DIM_NAME + 1];
-	char p_iva[DIM_NAME + 1];
+	char nome[DIMSTR + 1];
+	char cogn[DIMSTR + 1];
+	char p_iva[DIMSTR + 1];
 
 } gestore_t;
 
 typedef struct{
 
-	char modello[DIM_NAME + 1];
+	char modello[DIMSTR + 1];
 	char targa[DIM_TARGA + 1];
 	int mese;
 	int anno;
@@ -80,10 +80,10 @@ void stampa(concessionario_t conc[], int dim_l_conc, int aa){
 	
 	for(i = 0; i < dim_l_conc; i++){
 	
-		printf("Conc. %d, codice %d: gestore %s %s\n", i, conc[i].codice, conc[i].gestore.nome, conc[i].gestore.cogn);
+		printf("Conc. %d, codice %d: gestore %s %s\n", i, (conc+i).codice, conc[i].gestore.nome, conc[i].gestore.cogn);
 		printf("Immatricolazioni %d\n", aa);
 	
-		for(j = 0, presente = 0; j < conc[i].n_auto; j++){
+		for(j = 0, presente = 0; j < (conc+i)->n_auto; j++){
 	
 			if(conc[i].lista[j].anno == aa){
 				presente = 1;
