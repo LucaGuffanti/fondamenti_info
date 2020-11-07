@@ -13,9 +13,11 @@
 #define LUNGHEZZA 5
 #define MAXDIST 6
 #define FINDNAME 7
-#define CORNICE 8
+#define BOUNDING_BOX 8
 #define QUIT 9
 
+void appendi(lista_localita_t *);
+void cornice(lista_localita_t *);
 
 typedef struct{
 	int x, y;
@@ -32,10 +34,6 @@ int main(){
 
 	lista_localita_t l;
 	int s; //input dell'utente
-	int i, j;
-	float dist;
-	int max_pos1, max_pos2;
-	float max_dist, curr_dist;
 
 	l.num = 0;
 
@@ -44,16 +42,8 @@ int main(){
 		scanf("%d", &s);
 
 		if(s == APPEND){
-
-			if(l.num < MAXPUN){
-				printf("Insert Values: \n");
-				scanf("%d%d %s", &l.punti[l.num].x, &l.punti[l.num].y, l.punti[l.num].nome);
-				
-				l.num++;
-			}else{
-				printf("No memory\n");
-			}
-
+			appendi(&l);
+			
 		}
 		else if(s == INSERT){
 
@@ -171,41 +161,8 @@ int main(){
 			}
 
 		}
-		else if(s == CORNICE){
-			if(l.num > 0){
-				int xmin, ymin, xmax, ymax;
-				int i;
-				
-				xmax = l.punti[0].x;
-				ymax = l.punti[0].y;
-
-				for(i = 0; i < l.num; i++){
-					if(l.punti[i].x > xmax){
-						xmax = l.punti[i].x;
-					}
-					if(l.punti[i].y > ymax){
-						ymax = l.punti[i].y;
-					}
-				}
-
-				xmin = l.punti[0].x;
-				ymin = l.punti[0].y;
-
-				for(i = 0; i < l.num; i++){
-					if(l.punti[i].x < xmin){
-						xmin = l.punti[i].x;
-					}
-					if(l.punti[i].y < ymin){
-						ymin = l.punti[i].y;
-					}
-				}
-
-				printf("(%d,%d) (%d,%d)\n", xmin, ymax, xmax, ymax);
-				printf("(%d,%d) (%d,%d)\n", xmin, ymin, xmax, ymin);
-
-			}else{
-				printf("No path\n");
-			}
+		else if(s == BOUNDING_BOX){
+			cornice(&l);
 		}
 		else if(s != QUIT){
 			printf("Error\n");
@@ -217,4 +174,92 @@ int main(){
 
 
 	return 0;
+}
+
+void appendi(lista_localita_t *l){
+	
+	if(l->num < MAXPUN){
+		printf("Insert Values: \n");
+		scanf("%d%d %s", l->punti[l->num].x, l->punti[l->num].y, l->punti[l->num].nome);
+		
+		l->num++;
+	}else{
+		printf("No memory\n");
+	}
+
+}
+/*questo stampa dal minimo assoluto al massimo assoluto con 4 variabili*/
+/*
+void cornice(lista_localita_t *l){
+	if(l->num > 0){
+		int xmin, ymin, xmax, ymax;
+		int i;
+		
+		xmax = l->punti[0].x;
+		ymax = l->punti[0].y;
+
+		for(i = 0; i < l.num; i++){
+			if(l->punti[i].x > xmax){
+				xmax = l.punti[i].x;
+			}
+			if(l->punti[i].y > ymax){
+				ymax = l->punti[i].y;
+			}
+		}
+
+		xmin = l->punti[0].x;
+		ymin = l->punti[0].y;
+
+		for(i = 0; i < l.num; i++){
+			if(l->punti[i].x < xmin){
+				xmin = l->punti[i].x;
+			}
+			if(l->punti[i].y < ymin){
+				ymin = l->punti[i].y;
+			}
+		}
+
+		printf("(%d,%d) (%d,%d)\n", xmin, ymax, xmax, ymax);
+		printf("(%d,%d) (%d,%d)\n", xmin, ymin, xmax, ymin);
+
+	}else{
+		printf("No path\n");
+	}
+
+}
+*/
+
+/*questo fa la cornice però con una struttura "sottoutilizzata"*/
+void cornice(lista_localita_t *l){
+	int i;
+	localita_t bl, tr;
+
+	if(l->num > 0){
+		bl.x = l->punti[0].x;
+		bl.y = l->punti[0].y;
+		tr.x = l->punti[0].x;
+		tr.y = l->punti[0].y;
+
+		for(i = 0; i < l->num; i++){
+			if(l->punti[i].x < bl.x){
+				bl.x = l->punti[i].x;
+			}
+			else if(l->punti[i].x > tr.x){
+				tr.x = l->punti[i].x;
+			}
+
+			if(l->punti[i].y < bl.y){
+				bl.y = l->punti[i].y;			
+			}
+			else if(l->punti[i].y > tr.y){
+				tr.y = l->punti[i].y;
+			}
+
+			/*
+			printf;
+			*/
+		}
+	}else{
+		printf("Percorso vuoto\n");
+	}
 }
