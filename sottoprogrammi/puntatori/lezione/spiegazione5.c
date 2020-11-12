@@ -10,7 +10,7 @@ int main(){
 
 	p2 = p2 + 2; /*punterò 2 celle in avanti, come v[2]*/
 
-	l = p2 - v /*questo mi porterà l a 2*/
+	l = p2 - v; /*questo mi porterà l a 2*/
 
 	/*Noi non possiamo passare un INTERO array alla funzione.
 	poiché l'array rappresenta un puntatore costante
