@@ -30,7 +30,7 @@ int main(){
 
     printf("%d\n", flag);
 
-    
+
     return 0;
 }
 
@@ -57,7 +57,7 @@ int regolare(point_t matrice[][N], int dim){
             dist_rc += distanza(matrice[i][j], matrice[i][j+1]);
         }
 
-        if(dist_rc > dist_diag){
+        if(dist_rc >= dist_diag){
             flag = 0;
         }
     }
@@ -67,7 +67,7 @@ int regolare(point_t matrice[][N], int dim){
             dist_rc += distanza(matrice[i][j], matrice[i+1][j]);
         }
 
-        if(dist_rc > dist_diag){
+        if(dist_rc >= dist_diag){
             flag = 0;
         }
     }
