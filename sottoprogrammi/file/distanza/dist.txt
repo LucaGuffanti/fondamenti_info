@@ -1,0 +1,6 @@
+pippo 6 8
+pluto 7 9
+mamma 4 5
+papa 8 9
+ciao 4 4
+cavolino 5 89
