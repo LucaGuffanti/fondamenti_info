@@ -41,59 +41,18 @@ int main(){
 }
 
 void converti_numero(char str[], int *num, int *valido){
-    int strIndex, neg, digit;
+    int strIndex;
 
-    for(strIndex = 0, *num = 0, *valido = 1, neg = 0; str[strIndex] != '\0' && valido; strIndex++){
+    for(strIndex = 0, *num = 0, *valido = 1; str[strIndex] != '\0' && valido; strIndex++){
         
         if(str[strIndex] >= '0' && str[strIndex] <= '9'){
-            switch(str[strIndex]){
-                case '0':
-                    digit = 0;
-                    break;
-                case '1':
-                    digit = 1;
-                    break;
-                case '2':
-                    digit = 2;
-                    break;
-                case '3':
-                    digit = 3;
-                    break;
-                case '4':
-                    digit = 4;
-                    break;
-                case '5':
-                    digit = 5;
-                    break;
-                case '6':
-                    digit = 6;
-                    break;
-                case '7':
-                    digit = 7;
-                    break;
-                case '8':
-                    digit = 8;
-                    break;
-                case '9':
-                    digit = 9;
-                    break;
-                default:
-                    digit = 0;
-                    break;
-            };
-            *num = (*num * BASE_CONVERSIONE) + digit;
-        }
-        else if(str[strIndex] == '-'){
-            neg = !neg;
+            *num = (*num * BASE_CONVERSIONE) + str[strIndex] - '0';
         }
         else{
             valido = 0;
         }
     }
-
-    if(neg){
-        *num = -(*num);
-    }
+    
     if(!valido){
         *num = 0;
     }
