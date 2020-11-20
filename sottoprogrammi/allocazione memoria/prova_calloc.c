@@ -7,7 +7,7 @@ int main(){
     int *a;
 
     a = calloc(sizeof(int) * n, sizeof(int));
-
+    if(a)
     for(i = 0; i < n; i++){
         printf("%d", *(a+i));
     }
