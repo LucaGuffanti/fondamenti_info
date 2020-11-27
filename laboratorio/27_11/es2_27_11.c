@@ -140,7 +140,7 @@ char decifra(char carattere, int passo){
     char c;
         c = (carattere - (passo - 'a'));
         if(c < 'a'){
-            /*il + 1 bisogna SEMPRE ricordarsi di metterlo perché sennò si arriva ad un elemento prima nell'underflow*/
+            /*il + 1 bisogna SEMPRE ricordarsi di metterlo per qualche strano motivo*/
             c += 'z' - 'a' + 1;
         }
         dec = c;
