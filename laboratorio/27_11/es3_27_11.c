@@ -60,7 +60,7 @@ responso. Gestire opportunamente gli eventuali errori.
 
 #define VUOTO 0
 #define DIM 9
-#define FILENAME "mix.txt"
+#define MAXS 50
 
 void stampa_sudoku(int [][DIM]);
 int leggi_testuale(int [][DIM], char []);
@@ -71,14 +71,35 @@ int main(){
 
     int m[DIM][DIM];
     int esito;
-    esito = leggi_testuale(m, FILENAME);
-    printf("%d\n\n", esito);
-    
-    if(esito){
-        stampa_sudoku(m);
-        printf("%d", verifica_sudoku(m));
+    int scelta;
+    char filename[MAXS+1];
+
+    do{
+        printf("Inserire l'estensione del file in ingresso\n1) .txt\n2) .bin\n\n");
+        scanf("%d", &scelta);
+
+    }while(scelta != 1 && scelta != 2);
+
+    printf("Inserire il nome del file, con tanto di estensione:\n");
+    scanf("%s", filename);
+
+    if(scelta == 1){
+        esito = leggi_testuale(m, filename);
+    }
+    if(scelta == 2){
+        esito = leggi_binario(m, filename);
     }
 
+    if(esito){
+        stampa_sudoku(m);
+        if(verifica_sudoku(m)){
+            printf("Struttura Corretta!\n");
+        }else{
+            printf("Struttura Errata!\n");
+        }
+    }else{
+        printf("Struttura Errata!\n");
+    }
 
     return 0;
 }
