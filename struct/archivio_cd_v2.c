@@ -33,7 +33,7 @@ int main(){
 	
 	durata_t max_d;
 	
-	char[SDIM + 1];
+	char cd[SDIM + 1];
 
 
 
