@@ -216,7 +216,7 @@ nodo_t* inserisciInOrdine(nodo_t *h, int num){
 		tmp->n = num;
 		tmp->next = NULL;
 
-		if(h && n > h->n){
+		if(h && num > h->n){
 			for(prec = h, curr = h->next; curr && num > curr->n; prec = curr, curr = curr->next);
 			
 			tmp->next = curr;
@@ -299,7 +299,7 @@ nodo_t* inserisciInOrdineRicorsione(nodo_t *h, int num){
 	}
 }
 
-nodo_t* scriviBinario(nodo_t* h. char* filename){
+nodo_t* scriviBinario(nodo_t* h, char* filename){
 	
 	FILE *fp;
 
@@ -352,7 +352,7 @@ nodo_t* listaMedie(nodo_t *h){
 		curr = h->next;
 
 		for(; curr; prec = curr, curr = curr->next){
-			num = (prec->num + curr->num)/2;
+			num = (prec->n + curr->n)/2;
 			l2 = inserisciInCoda(l2, num);
 		}
 
@@ -381,7 +381,7 @@ nodo_t* scambioCoppie(nodo_t *h){
 		}
 		if(c) /*perché qui potrebbe essere uscito dal ciclo 
 				perché non esiste il successivo, ma c potrebbe avere un nodo valido*/
-			inserisciInCoda(c->n);
+			inserisciInCoda(l2, c->n);
 
 	}else{
 		printf("Lista vuota\n");
@@ -399,14 +399,14 @@ nodo_t* scambioCoppie2Variabili(nodo_t *h){
 
 	if(h){
 
-		prec = h
+		prec = h;
 		curr = h->next;
 		for(; prec && curr; prec = curr, curr = curr->next){
 			l2 = inserisciInCoda(l2, curr->n);
 			l2 = inserisciInCoda(l2, prec->n);
 		}
 		if(prec)
-			inserisciInCoda(prec->n);
+			inserisciInCoda(l2, prec->n);
 
 	}else{
 		printf("Lista vuota\n");
@@ -423,10 +423,10 @@ void listaSegno(nodo_t *h, nodo_t **lp, nodo_t **ln){
 	if(h){
 
 		while(h){
-			if(h->num > 0)
-				*lp = inserisciInCoda(*lp, num);
+			if(h->n > 0)
+				*lp = inserisciInCoda(*lp, h->n);
 			else
-				*ln = inserisciInCoda(*ln, num);
+				*ln = inserisciInCoda(*ln, h->n);
 
 			h = h->next;
 		}
@@ -446,9 +446,9 @@ void listaPariDispari(nodo_t *h, nodo_t **ld, nodo_t **lp){
 
 		while(h){
 			if(h->n % 2 == 0)
-				*lp = inserisciInCoda(*lp, n);
+				*lp = inserisciInCoda(*lp, h->n);
 			else
-				*ld = inserisciInCoda(*ld, n);
+				*ld = inserisciInCoda(*ld, h->n);
 
 			h = h->next;
 		}
