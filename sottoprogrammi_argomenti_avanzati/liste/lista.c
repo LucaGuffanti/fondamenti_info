@@ -2,6 +2,10 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+/*con le virgolette dico dove cercare l'header
+<> -> directory di sistema
+"" -> cartella corrente 
+*/
 #include "lista.h"
 
 void visualizza(nodo_t *h){
@@ -144,7 +148,7 @@ nodo_t* eliminaOgniElemento(nodo_t *h, int num){
 
 }
 
-void distruggiLista(nodo_t *h){
+nodo_t* distruggiLista(nodo_t *h){
 
 	nodo_t *tmp;
 
@@ -153,6 +157,8 @@ void distruggiLista(nodo_t *h){
 		h = h->next;
 		free(tmp);
 	}
+
+	return NULL;
 }
 
 nodo_t* inserisciInOrdine(nodo_t *h, int num){
@@ -455,8 +461,8 @@ nodo_compatto_t* compattaLista(nodo_t *h){
 						for(curr = l1; curr->next; curr = curr->next);
 						curr->next = tmp;
 					}else{
-						tmp->next = h;
-						h = tmp;
+						tmp->next = l1;
+						l1 = tmp;
 					}
 				}else{
 					printf("Errore\n");

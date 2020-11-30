@@ -30,7 +30,7 @@ nodo_t* inserisciInCoda(nodo_t *, int);
 nodo_t* inserisciInOrdine(nodo_t *, int);
 nodo_t* eliminaElemento(nodo_t *, int);
 nodo_t* eliminaOgniElemento(nodo_t *h, int ); /*fare come esercizio*/
-void distruggiLista(nodo_t *);
+nodo_t* distruggiLista(nodo_t *);
 nodo_t* scriviBinario(nodo_t *, char *);
 nodo_t* leggiBinario(char *);
 nodo_t* listaMedie(nodo_t*);
