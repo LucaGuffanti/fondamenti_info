@@ -1,18 +1,21 @@
 #include <stdio.h>
 
-int somma(int, int);
+void foo();
 
-int main(){
-    int a, b, s;
-    scanf("%d %d", &a, &b);
-    s = somma(a, b);
-
-    printf("%d\n", s);
-
-    return 0;
+void foo(){
+    int *a;
+    *a = 20;
 }
 
-int somma(int a, int b){
-    int s_ = a + b;
-    return s_;
+int main(){
+    int i, n, s;
+    foo();
+    scanf("%d", &n);
+
+    for(i = 0, s = 0; i < n; i++)
+        s = s + i;
+
+    printf("%d\n", s);
+      
+    return 0;
 }
