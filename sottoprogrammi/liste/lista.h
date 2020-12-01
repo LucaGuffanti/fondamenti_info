@@ -1,6 +1,26 @@
 #ifndef LISTA_H
 #define LISTA_H
 
+/*
+a cosa servono questi comandi?
+nel file dove trovo il main potrei dover
+includere, dopo il preprocessore,
+la stessa dichiarazione più volte, cosa che non va bene al
+compilatore
+
+queste istruzioni istruiscono il compilatore
+dicendo di eseguire l'inclusione solo se il simbolo
+specificato è già stato definito.
+
+la prima volta che includerò, copierò tutto il 
+pezzo di codice, senza alcuna difficoltà
+
+la seconda voltà che includerò la stessa lista.h,
+avendo già definito la lista precedentemente, evito 
+di eseguire doppie inclusioni, in modo tale da evitare errori
+di doppia inclusione del simbolo.
+*/
+
 
 typedef struct nodo_ {
 /*per non avere errori di sintassi, definisco il tipo
