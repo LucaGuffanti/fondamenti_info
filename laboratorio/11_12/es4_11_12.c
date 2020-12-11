@@ -1,3 +1,21 @@
+/*
+S4. Considerando la struttura dati ed i sottoprogrammi contenuti nei file lista.c e lista.h, implementare un sottoprogramma che riceve
+come parametri una lista dinamica di interi l1 ed un array di interi sel. Assumendo che sel contenga solo valori 0 e 1 e che sia di
+dimensione pari a l1, il sottoprogramma costruisce e restituisce una nuova lista l2 che contiene solo gli elementi di l1 che si trovano
+nella lista in una posizione corrispondente agli 1 del vettore sel.
+Esempio: se il sottoprogramma riceve in ingresso
+l1 = 3 -> 5 -> 8 -> 9 -> 12
+vet = [0, 1, 0, 1, 1]
+dovrà ritornare la lista
+l2 = 5 -> 9 -> 12
+Scrivere un programma che chiede all'utente
+1. una sequenza di lunghezza indefinita di numeri interi chiesta all'utente e terminata dal valore 0 (che non fa parte della sequenza)
+per popolare una lista dinamica
+2. un array di valori interi 0 e 1 di lunghezza pari a quella della lista (array da allocare dinamicamente!)
+Il programma invoca il sottoprogramma sopra definito, visualizza la lista restituita e libera tutta la memoria allocata.
+Gestire opportunamente tutti gli eventuali errori.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 

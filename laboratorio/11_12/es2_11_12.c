@@ -1,3 +1,31 @@
+/*
+ES 2
+1. Scrivere un sottoprogramma C che riceve come parametri un magazzino di componenti MAG, un manuale di istruzioni MAN ed
+un numero intero X. Il sottoprogramma verifica se è possibile costruire X mobili relativi al manuale MAN ricevuto come
+parametro e prelevando i componenti dal magazzino MAG; in caso affermativo il sottoprogramma restituisce 1 altrimenti 0.
+2. Scrivere un programma che riceve come argomenti i nomi di due file binari, contenenti rispettivamente i dati di un libretto di
+istruzioni (una variabile di tipo istruzioni_t) e di un magazzino (una variabile di tipo magazzino_t), ed un numero N. Il programma
+legge dai file i dati salvandoli in due variabili di tipo istruzioni_t e magazzino_t, ne visualizza i due contenuti ed esegue la
+chiamata al sottoprogramma precedentemente definito e stampa a video il risultato dell'elaborazione. Il programma deve gestire
+opportunamente tutti i possibili casi di errore.
+Come test, forniamo i file istrN.bin, magN.bin, con N=1,2,3. Qui di seguito mostriamo gli output omettendo le stampe relative a codici,
+descrizioni e quantità, lasciando quindi solo l'output del sottoprogramma.
+./ikea istr1.bin mag1.bin 1
+Output: 1
+./ikea istr1.bin mag1.bin 2
+Output: 0
+./ikea istr2.bin mag2.bin 0
+Output: 1
+./ikea istr2.bin mag2.bin 1
+Output: 0
+./ikea istr3.bin mag3.bin 3
+Output: 1
+./ikea istr3.bin mag3.bin 4
+Output: 0
+./ikea istr2.bin mag3.bin 0
+Output: 0
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h> 
