@@ -1,0 +1,88 @@
+Dati i due numeri A = +21_16 e B = −21_10 effettuare la conversione in base 2, notazione complemento a 2, sul numero
+minimo di bit necessari a rappresentare gli operandi. Si effettuino poi, in tale rappresentazione, le operazioni A+B e A-B
+indicando esplicitamente se si verifica overflow o meno, e motivando la risposta. Mostrare i passaggi fatti.
+
+conversione di A
+A_2 = 00100001
+A_2C2 = 00100001
+
+conversione di B
+|B|_10 = 21
+
+21|1
+10|0
+5 |1
+2 |0
+1 |0
+0 |1
+
+|B|_2 = 100101
+|B|_2C2 = 0100101
+ B_2C2 = 1011010 + 1 = 1011011
+
+ poiché A_2C2 è rappresentato su 8 bit, restringo di un bit A_2C2
+
+ B_2C2 = 11011011
+
+ A+B
+       11
+  0100001+
+  1011011=
+  _________  
+  1111100 
+
+  non è avvenuto overflow, dato che non può avvenire se gli operandi sono discordi
+
+ A-B = A+(-B)
+
+  1    1
+  0100001+
+  0100101=
+  _________
+  1000110
+
+  è avvenuto overflow, dato che da operandi positivi si ottiene un risultato negativo
+
+
+
+Quesito 2 (5 punti) Punteggio ottenuto: . . . /5
+Dato il numero A = −227.62510 convertirlo in base 2, notazione IEEE 754, singola precisione (non nella forma (1 +M)×2
+e
+,
+bens`ı nella forma estesa con tutti i bit). Mostrare i passaggi.
+
+conversione di A
+
+-Parte Intera di A
+ B_10 = -227
+|B|_10 = 227
+
+227|1
+113|1
+ 56|0
+ 28|0
+ 14|0
+  7|1
+  3|1
+  1|1
+  0|
+
+|B|_2 = 11100011
+
+-Parte Decimale di A
+
+0.625 *2
+1.25 *2
+0.5  *2
+1.0  *2
+
+
+|A|_2 = 11100011.101
+|A|_2 = 1.1100011101 * 2^(7), sommo l'eccesso 127 -> 2^(7+127) = 2^134
+
+ricordo quindi la presenza del segno meno.
+
+135_10 = (128 + 6)_10 = 1000000_2 + 00000110_2 = 10000110 
+
+A_2IEE754 = 1100 0011 0110 0011 1010 0000 0000 0000
+			 c	   3	6	 3	  a	   0	0	 0

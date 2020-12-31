@@ -19,23 +19,19 @@ int main(){
 void load(int *m, int col, int row){
     int i, j;
     int *cellIndex;
-
     for(i = 0; i < row; i++){
         for(j = 0; j < col; j++){
-            /*devo eseguire la linearizzazione*/
-            cellIndex = ((m + i*col) + j);
+            cellIndex = (m + i*col) + j;
             scanf("%d", cellIndex);
         }
     }
 }
-
 void print(int *m, int col, int row){
     int i, j;
     int *cellIndex;
-
     for(i = 0; i < row; i++){
         for(j = 0; j < col; j++){
-            cellIndex = ((m + i*col) + j);
+            cellIndex = (m + i*col) + j;
             printf("%d ", *cellIndex);
         }
         printf("\n");
