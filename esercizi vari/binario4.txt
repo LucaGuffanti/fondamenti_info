@@ -1,0 +1,32 @@
+A = -A1_16MS
+B = 1010100001_2C2
+
+conversione di A
+|A|_16MS = +A1
+|A|_2MS = 001010001 = |A|_2C2
+ A_2C2 = 110101111
+ per rappresentare entrambi gli operandi servono almeno 10bit. estendo quindi A_2C2
+ 
+ A_2C2 = 1110101111
+ 
+ A+B
+111 1 1111
+ 1110101111+
+ 1010100001=
+ __________
+ 1001010000
+ 
+ non si è verificato overflow poiché il risultato è concorde agli operandi
+
+
+
+ A-B = A+(-B)
+ 
+ con -B_2C2 = 0101011111
+1111111111
+ 1110101111+
+ 0101011111=
+ __________
+ 0100001110
+
+ non si può verificare overflow a partire da operandi discordi

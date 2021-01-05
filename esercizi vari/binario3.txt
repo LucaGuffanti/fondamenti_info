@@ -1,0 +1,45 @@
+A = -45_10
+B = +12_10
+
+conversione di A
+|A|_10 = 45
+ 45|1
+ 22|0
+ 11|1
+  5|1
+  2|1
+  1|1
+  0
+
+ |A|_2 = 111101
+ |A|_2C2 = 0111101
+  A_2C2 = 1000010+1 = 1000011
+
+conversione di B
+ 12|0
+  6|0
+  3|1
+  1|1
+  0|
+
+ B_2 = 1100
+ B_2C2 = 01100
+
+ estendo a 7 bit B_2C2
+ B_2C2 = 0001100
+
+ A+B
+  
+ 1000011+
+ 0001100=
+_________
+ 1001111 non si verifica overflow a partire da operandi discordi
+
+ A-B = A+(-B)
+ calcolo -B_2C2 = 1110011+1 = 1110100
+1
+ 1000011+
+ 1110100=
+_________
+ 0110111 si verifica overflow poiche da operandi concordisi è ottenuto un risultato discorde
+

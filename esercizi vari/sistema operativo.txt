@@ -1,0 +1,43 @@
+il sistema operativo si occupa di gestire la complessità dei vari elementi
+dell'architettura del calcolatore, fornendo al programmatore o all'utente, una visione
+semplificata, ed estesa del sistema con cui interagisce.questa gestsione è effettuata da
+una serie di particolari gestori.
+
+gestore processi
+ si occupa di gestire la concorrenza tra i processi per l'accesso e l'utilizzo delle risorse
+ del processore. questo va a gestire la creazione di processi, che può avvenire in base ad una chiamata
+ di sistema, ad una chiamata da altro processo o in base ad una richiesta esplicita dell'utente.
+ il gestore dei processi associa quindi una struttura dati al processo, contenente informazioni
+ relative allo stato (PID, contenuti dei registri, mappa della memoria utilizzata) e delle informazioni
+ relative all'uso della memoria.
+ il gestore dei processi si occupa della terminazione dei processi, e la loro attivazione ed esecuzione
+ è gestita da un elemento di questo gestore, cioè lo scheduler, che ordina in modo efficace 
+ il susseguirsi delle attivazioni di processe, sulla base di politiche basate sulla priorità, oppure ad esempio sul
+ voler garantire la stessa quantità di tempo di esecuzione ad ogni processo (politica round-robin), per massimizzare una serie di parametri 
+ relativi alle risorse utilizzate, sia in termini di tempo e spazio, da ogni processo.
+gestore memoria
+ esegue la virtualizzazione della memoria per costruire uno pseudo-realismo in modo tale
+ da garantire ai processi una quantità di memoria apparentemente "illimitata" con velocità di accesso
+ molto veloci. la gestione della memoria avviene da parte di un elemento hardware che fa da intermediario
+ tra cpu e bus.
+ per ottenere questo effetto si applicano diversi meccanismi, come la rilocazione, la paginazione, lo swapping e la segmentazione,
+ basandosi in gran parte sui principi di località spaziale e temporale. 
+gestore i/o
+ permette di interfacciarsi con le periferiche di input e di output, permettendo
+ ai singoli processi di credere di essere gli unici a poter usare tutte le risorse
+ offerte dalle periferiche. 
+ vengono forniti diversi elementi ausiliari: driver, cioè delle funzionalità aggiuntive
+ che sono fornite direttamente dal costruttore, che permettono di comandare operazioni sulle
+ periferiche, cioè ad esempio lettura e scrittura.
+ sottosistema indipendente i/o, che fornisce un'interfaccia indipendente dal sistema che
+ sta gestendo la periferica. si occupa di gestire le system call riferite
+ alle periferiche. ne permette la protezione, evitando l'accesso indesiderato da parte di processi.
+ esegue il buffering, per disaccoppiare la cpu dalle periferiche, dato che questi operano a velocità
+ diverse.
+ il gestore degli interrupt è in grado di terminare i processi, avviare le procedure di gestione
+ dell'interrupt individuato e caricare in memoria il processo da eseguire successivamente, eseguendolo.
+ 
+file system
+ costruisce un'astrazione che nasconde la reale natura dei dati salvati su disco
+ basata su gerarchia di file e cartelle, introducendo comandi che possono 
+ permettere la gestione(creazione, eliminazione) dei filde e delle cartelle

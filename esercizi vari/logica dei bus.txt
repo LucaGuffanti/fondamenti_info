@@ -1,0 +1,12 @@
+il bus di sistema è un elemento hardware che permette
+la comunicazione, cioè l'invio di segnali elettrici tra i vali elementi
+architetturali del calcolatore. questo è normalmente strutturato a partire da un filo di 
+rame, e si suddivide in 3 canali, ognuno con un compito ben preciso: 
+il bus dati ospita le comuncazioni che consistono nell'invio di dati da un elemento ad un altro, si pensi al comando di
+lettura da memoria principale attuato da parte della cpu. in questo caso il dato, inteso come informazione binaria
+salvata in memoria, "viaggia" lungo il bus dati.
+il bus di controllo "ospita" invece quei segnali inerenti ai comandi di operazione sugli elementi architetturali
+provenienti dalla cpu verso le periferiche, e le conferme di eseguite operazioni o segnali di errori verso la cpu.
+il bus indirizzi, infine, "ospita" quelle informazioni che coinvolgono, come introdotto dal nome, gli indirizzi di memoria in cui
+bisogna eseguire determinate operazioni. pensando alla richiesta di lettura da memoria principale introdotta precendentemente. il
+ruolo del bus indirizzi è quello di trasmettere l'indirizzo in cui eseguire la lettura, come comandato dalla cpu. 
