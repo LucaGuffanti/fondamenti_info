@@ -1,0 +1,43 @@
+A = -62_10MS
+B = +54_16MS
+
+conversione di A
+|A|_10MS = +62
+62|0
+31|1
+15|1
+ 7|1
+ 3|1
+ 1|1
+ 0|
+
+|A|_2MS = 0111110
+A_2C2 = 1000001
+
+conversione di B
+B_2MS = 0 01010100 = B_2C2
+posso restringere di un bit
+B_2C2 = 01010100
+
+il numero minore di bit per entrambi gli operandi è 8.
+estendo di un bit A_2C2
+
+A_2C2 = 11000001
+
+A+B
+11
+ 11000001+
+ 01010100=
+_________
+ 00010101
+
+non si è verificato overflow, perché non può a vvenire a partire da operandi discordi
+
+A-B = A+(-B)
+1      1
+ 11000001+
+ 10101001=
+__________
+ 01101010
+
+si è verificato overflow: sommando due numeri negativi ho ottenuto un numero positivo

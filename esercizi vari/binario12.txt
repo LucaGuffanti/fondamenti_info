@@ -1,0 +1,39 @@
+X = 111001110_2C2
+Y = +4F_16MS
+
+è possibile andare a restringere X
+X_2C2 = 1001110
+
+conversione di Y
+|Y|_16 = 4F
+|Y|_2 = 01001111
+Y_2MS = Y_2C2 = 001001111
+è possibile restringere Y
+Y_2C2 = 01001111
+
+numero di bit X: 7
+numero di bit Y: 8
+
+per eseguire i calcoli estendo X di 1 bit, ottenendo
+X_2C2 = 11001110
+
+X + Y
+11  111
+ 11001110+
+ 01001111=
+----------
+ 00011101
+
+non avviene overflow, poiché sommo due operandi di segno discorde.
+
+X - Y = X + (-Y)
+eseguo la conversione di Y in -Y
+-Y = 10110000 + 1 = 10110001
+1
+ 11001110+
+ 10110001=
+----------
+ 01111111
+
+poiché ho ottenuto un risultato positivo andando a sommare due operandi negativi, confermo che si è
+verificato overflow.

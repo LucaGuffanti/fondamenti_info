@@ -1,0 +1,46 @@
+A = -33_16MS
+B = -28_10MS
+
+conversione di A
+|A|_16 = 33
+|A|_2 = 00110011
+|A|_2MS = 000110011 = |A|_2C2
+ A_2C2 = 111001101
+
+posso ridurre A 
+A_2C2 = 1001101
+numero minimo di bit: 7
+
+conversione di B
+|B|_10MS = 28
+28|0
+14|0
+ 7|1
+ 3|1
+ 1|1
+ 0|
+
+|B|_2 = 11100
+|B|_2MS = |B|_2C2 = 011100
+ B_2C2 = 100011 + 1 = 100100
+numero minimo di bit: 6
+
+per eseguire le varie operazioni estendo quindi B di un bit.
+B_2C2 = 1100100
+
+A+B
+1  11
+ 1001101+
+ 1100100=
+---------
+ 0110001
+avviene overflow, perché si ottiene un risultato positivo sommando due operandi negativi
+
+A-B = A+(-B)
+calcolo -B_2C2 = 0011011 + 1 = 0011100
+  111
+ 1001101+
+ 0011100=
+---------
+ 1101001
+non avviene overflow, perché sommo due operandi discordi.

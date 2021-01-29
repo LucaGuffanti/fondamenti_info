@@ -1,0 +1,39 @@
+X = -57_10MS
+Y = 110_2MS
+
+conversione di X
+|X|_10MS = +57
+57|1
+28|0
+14|0
+ 7|1
+ 3|1
+ 1|1
+ 0
+
+|X|_2MS = |X|_2C2 = 0111001
+X_2C2 = 1000111
+
+conversione di Y
+|Y|_2MS = |Y|_2C2 = 010
+Y_2C2 = 110
+
+X+Y
+per farlo estendo a 7 bit Y
+Y_2C2 = 1111001
+111111 
+ 1000111+
+ 1111110=
+_________
+ 1000101
+
+non si verifica overflow perché sommando tue operandi negativi ottengo un operando negativo
+
+X-Y = X+(-Y)
+    11
+ 1000111+
+ 0000010=
+________
+ 1001001
+
+non si verifica overflow perché sommo tra loro due operandi discordi.

@@ -1,0 +1,20 @@
+Z = c1540000_IEEE754_16
+
+conversione di Z
+Z_2IEEE754 = 1100 0001 0101 0100 0000 0000 0000 0000
+identifico le porzioni notevoli
+
+1|10000010|10101000000000000000000
+S    E           M
+
+segno = (-1)^S = -1
+esponente = (10000010 - 01111111) = 128 + 2 - 127 = 3
+mantissa = 1 + M = 1.101010
+
+Z_2 -> segno*mantissa*2^(esponente) = -1.101010*2^3 = -1101.010
+converto Z_2MS in Z_10MS
+
+parte intera: 1 + 4 + 8 = 13
+parte decimale: 1 * 1/4 = 0.25
+
+Z_10MS = -13.025

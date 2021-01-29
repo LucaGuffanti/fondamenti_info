@@ -1,0 +1,29 @@
+X = 11111010110101_2ms
+Y = 0110111011101101_2c2 -> 16 bit
+
+converto X
+|x|_2c2 = |x|_2ms = 01111010110101
+x_2c2 = 10000101001011 -> 14 bit
+
+X+Y 
+(estendo x a 16 bit)
+
+1 11 111111  1111     
+  1110000101001011+
+  0110111011101101=
+-------------------
+  0101000000101000
+
+non si verifica overflow perché sommo operandi discordi in segno
+
+X-Y = X+(-Y)
+calcolo -Y
+-Y_2c2 = 1001000100010011
+ 1      1      11
+  1110000101001011+
+  1001000100010011=
+-------------------
+  0111001001011110
+
+si verifica overflow perché a partire da operandi negativi ottengo un
+risultato positivo

@@ -1,0 +1,46 @@
+A = -37_10MS
+B = -37_16MS
+
+conversione di A
+|A|_10MS = 37
+37|1
+18|0
+ 9|1
+ 4|0
+ 2|0
+ 1|1
+ 0|
+
+|A|_2 = 100101
+|A|_2MS = |A|_2C2 = 0100101
+ A = 1011011
+
+conversione di B
+|B|_16MS = 37
+|B|_2 = 00110111
+|B|_2MS = |B|_2C2 = 000110111
+ B_2C2 = 111001001
+posso ridurre B
+B_2C2 = 1001001
+
+il minor numero di bit per rappresentare entrambi gli operandi è 7
+
+A+B
+1 11 11
+ 1011011+
+ 1001001=
+---------
+ 0100100
+
+si verifica overflow poiché a partire da operandi negativi ottengo un risultato positivo
+
+A+(-B)
+
+vado a calcolare -B_2C2 = 0110111
+1111111
+ 1011011+
+ 0110111=
+---------
+ 0010010
+
+non si verifica overflow poiche sommo tra loro operandi discordi
